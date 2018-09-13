@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="GTAVC Release|Win32">
+      <Configuration>GTAVC Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GTAVC zDebug|Win32">
+      <Configuration>GTAVC zDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B212DDA4-2A8E-45B2-914D-7BEEB31D06B1}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DirectxProject</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GTAVC Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GTAVC zDebug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GTAVC Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GTAVC zDebug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GTAVC Release|Win32'">
+    <OutDir>$(GTA_VC_DIR)\scripts\</OutDir>
+    <IntDir>$(ProjectDir).obj\GTAVC\Release\</IntDir>
+    <TargetName>DirectxProject.VC</TargetName>
+    <TargetExt>.asi</TargetExt>
+    <IncludePath>$(RWD3D9_DIR)\;C:\Users\BOLSONARO\Desktop\DIVERSOS\d3d8;$(WindowsSDK_IncludePath);$(DIRECTX9_SDK_DIR)\Include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(RWD3D9_DIR)\;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86"C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86";C:\Users\BOLSONARO\Desktop\DIVERSOS\d3d8;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GTAVC zDebug|Win32'">
+    <OutDir>$(GTA_VC_DIR)\scripts\</OutDir>
+    <IntDir>$(ProjectDir).obj\GTAVC\Debug\</IntDir>
+    <TargetName>DirectxProject.VC_d</TargetName>
+    <TargetExt>.asi</TargetExt>
+    <IncludePath>$(IncludePath);$(DIRECTX9_SDK_DIR)\Include\</IncludePath>
+    <LibraryPath>$(LibraryPath);$(DIRECTX9_SDK_DIR)\Lib\x86\</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GTAVC Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(PLUGIN_SDK_DIR)\plugin_vc\;$(PLUGIN_SDK_DIR)\plugin_vc\game_vc\;$(PLUGIN_SDK_DIR)\shared\;$(RWD3D9_DIR)\source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_NDEBUG;_USING_V110_SDK71_;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;GTAVC;GTAGAME_NAME="Vice City";GTAGAME_ABBR="VC";GTAGAME_ABBRLOW="vc";GTAGAME_PROTAGONISTNAME="Tommy";GTAGAME_CITYNAME="Vice City";_LA_SUPPORT;_DX9_SDK_INSTALLED;PLUGIN_SGV_10EN;PLUGIN_SGV_11EN;PLUGIN_SGV_STEAM;_NO_CRT_STDIO_INLINE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <AdditionalOptions>/Zc:threadSafeInit- %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <AdditionalLibraryDirectories>C:\Users\BOLSONARO\Desktop\DIVERSOS\d3d8;$(PLUGIN_SDK_DIR)\output\lib\;$(DIRECTX9_SDK_DIR)\Lib\x86;$(RWD3D9_DIR)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>plugin_vc.lib;d3d9.lib;d3dx9.lib;rwd3d9.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GTAVC zDebug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(PLUGIN_SDK_DIR)\plugin_vc\;$(PLUGIN_SDK_DIR)\plugin_vc\game_vc\;$(PLUGIN_SDK_DIR)\shared\;$(RWD3D9_DIR)\source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_USING_V110_SDK71_;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;GTAVC;GTAGAME_NAME="Vice City";GTAGAME_ABBR="VC";GTAGAME_ABBRLOW="vc";GTAGAME_PROTAGONISTNAME="Tommy";GTAGAME_CITYNAME="Vice City";_LA_SUPPORT;_DX9_SDK_INSTALLED;PLUGIN_SGV_10EN;PLUGIN_SGV_11EN;PLUGIN_SGV_STEAM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalOptions>/Zc:threadSafeInit- %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <AdditionalLibraryDirectories>$(PLUGIN_SDK_DIR)\output\lib\;$(RWD3D9_DIR)\libs\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>plugin_vc_d.lib;d3d9.lib;d3dx9.lib;rwd3d9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="DirectxProject.cpp" />
+    <ClCompile Include="GUI\CButton.cpp" />
+    <ClCompile Include="GUI\CCheckBox.cpp" />
+    <ClCompile Include="GUI\CD3DRender.cpp" />
+    <ClCompile Include="GUI\CDropDown.cpp" />
+    <ClCompile Include="GUI\CEditBox.cpp" />
+    <ClCompile Include="GUI\CElement.cpp" />
+    <ClCompile Include="GUI\CFigure.cpp" />
+    <ClCompile Include="GUI\CKeyboard.cpp" />
+    <ClCompile Include="GUI\CListBox.cpp" />
+    <ClCompile Include="GUI\CListView.cpp" />
+    <ClCompile Include="GUI\CMouse.cpp" />
+    <ClCompile Include="GUI\CPos.cpp" />
+    <ClCompile Include="GUI\CProgressBar.cpp" />
+    <ClCompile Include="GUI\CRadioButton.cpp" />
+    <ClCompile Include="GUI\CScrollBarVertical.cpp" />
+    <ClCompile Include="GUI\CTabPanel.cpp" />
+    <ClCompile Include="GUI\CText.cpp" />
+    <ClCompile Include="GUI\CTextBox.cpp" />
+    <ClCompile Include="GUI\CTimer.cpp" />
+    <ClCompile Include="GUI\CTrackBar.cpp" />
+    <ClCompile Include="GUI\CVar.cpp" />
+    <ClCompile Include="GUI\CWindow.cpp" />
+    <ClCompile Include="GUI\Entry.cpp" />
+    <ClCompile Include="GUI\LogFile.cpp" />
+    <ClCompile Include="GUI\ProgressBarVertical.cpp" />
+    <ClCompile Include="GUI\renderers\CGraphics.cpp" />
+    <ClCompile Include="GUI\renderers\Graphics.cpp" />
+    <ClCompile Include="GUI\ScrollablePane.cpp" />
+    <ClCompile Include="GUI\Scrollbar.cpp" />
+    <ClCompile Include="GUI\ScrollbarHorizontal.cpp" />
+    <ClCompile Include="GUI\TextUtils.cpp" />
+    <ClCompile Include="GUI\TrackBar.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GUI\CButton.h" />
+    <ClInclude Include="GUI\CCheckBox.h" />
+    <ClInclude Include="GUI\CD3DRender.h" />
+    <ClInclude Include="GUI\CDropDown.h" />
+    <ClInclude Include="GUI\CEditBox.h" />
+    <ClInclude Include="GUI\CElement.h" />
+    <ClInclude Include="GUI\CFigure.h" />
+    <ClInclude Include="GUI\CGUI.h" />
+    <ClInclude Include="GUI\CKeyboard.h" />
+    <ClInclude Include="GUI\CListBox.h" />
+    <ClInclude Include="GUI\CListView.h" />
+    <ClInclude Include="GUI\CMouse.h" />
+    <ClInclude Include="GUI\CPos.h" />
+    <ClInclude Include="GUI\CProgressBar.h" />
+    <ClInclude Include="GUI\CRadioButton.h" />
+    <ClInclude Include="GUI\CScrollBarVertical.h" />
+    <ClInclude Include="GUI\CTabPanel.h" />
+    <ClInclude Include="GUI\CText.h" />
+    <ClInclude Include="GUI\CTextBox.h" />
+    <ClInclude Include="GUI\CTimer.h" />
+    <ClInclude Include="GUI\CTrackBar.h" />
+    <ClInclude Include="GUI\CVar.h" />
+    <ClInclude Include="GUI\CWindow.h" />
+    <ClInclude Include="GUI\Entry.h" />
+    <ClInclude Include="GUI\LogFile.h" />
+    <ClInclude Include="GUI\ProgressBarVertical.h" />
+    <ClInclude Include="GUI\renderers\CGraphics.h" />
+    <ClInclude Include="GUI\renderers\Define.h" />
+    <ClInclude Include="GUI\renderers\Graphics.h" />
+    <ClInclude Include="GUI\ScrollablePane.h" />
+    <ClInclude Include="GUI\Scrollbar.h" />
+    <ClInclude Include="GUI\ScrollbarHorizontal.h" />
+    <ClInclude Include="GUI\TextUtils.h" />
+    <ClInclude Include="GUI\TrackBar.h" />
+    <ClInclude Include="GUI\unistr.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
