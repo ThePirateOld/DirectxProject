@@ -40,7 +40,6 @@ class CScrollbar;
 
 #define DXUT_MAX_EDITBOXLENGTH 0xFFFF
 
-
 #include <usp10.h>
 #include <dimm.h>
 #include <stdarg.h>
