@@ -1,42 +1,42 @@
 #pragma once
 #include "CGUI.h"
 
-class CVector
+class CPos
 {
 public:
 	int m_nX, m_nY;
 
-	CVector (POINT point);
-	CVector (CVector *pos);
-	CVector (int iX, int iY);
-	CVector ();
+	CPos (POINT point);
+	CPos (CPos *pos);
+	CPos (int iX, int iY);
+	CPos ();
 
-	~CVector ();
+	~CPos ();
 
-	CVector operator * (CVector otherPos);
-	CVector operator / (CVector otherPos);
+	CPos operator * (CPos otherPos);
+	CPos operator / (CPos otherPos);
 
-	CVector operator *= (CVector otherPos);
-	CVector operator /= (CVector otherPos);
+	CPos operator *= (CPos otherPos);
+	CPos operator /= (CPos otherPos);
 
-	CVector operator * (int pos);
-	CVector operator / (int pos);
+	CPos operator * (int pos);
+	CPos operator / (int pos);
 
-	CVector operator *= (int pos);
-	CVector operator /= (int pos);
+	CPos operator *= (int pos);
+	CPos operator /= (int pos);
 
-	CVector operator + (CVector otherPos);
-	CVector operator - (CVector otherPos);
+	CPos operator + (CPos otherPos);
+	CPos operator - (CPos otherPos);
 
-	CVector operator += (CVector otherPos);
-	CVector operator -= (CVector otherPos);
+	CPos operator += (CPos otherPos);
+	CPos operator -= (CPos otherPos);
 
-	CVector operator + (int nIncPos);
-	CVector operator - (int nDecPos);
+	CPos operator + (int nIncPos);
+	CPos operator - (int nDecPos);
 
-	CVector operator += (int pos);
-	CVector operator -= (int pos);
+	CPos operator += (int pos);
+	CPos operator -= (int pos);
 
-	bool operator == (CVector otherPos);
-	bool operator != (CVector otherPos);
+	bool operator == (CPos otherPos);
+	bool operator != (CPos otherPos);
 };

@@ -45,7 +45,7 @@ public:
 	void				SetAllSelected				( void );
 
 	size_t				GetSize						( void );
-	int					GetItemAtPos				( SControlRect rRect, CVector pos );
+	int					GetItemAtPos				( SControlRect rRect, CPos pos );
 
 	SEntryItem			*GetPrevItem				( SEntryItem *pEntry );
 	SEntryItem			*GetNextItem				( SEntryItem *pEntry );
@@ -59,7 +59,7 @@ public:
 	int					GetSelectedEntryIndex		( void );
 
 	void				UpdateScrollbars			( SControlRect rRect );
-	bool				ContainsRects				( SControlRect rRect, CVector pos );
+	bool				ContainsRects				( SControlRect rRect, CPos pos );
 		
 	CScrollablePane		*GetScrollbar				( void );
 private:

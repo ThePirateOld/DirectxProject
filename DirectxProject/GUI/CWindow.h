@@ -18,13 +18,13 @@ public:
 
 	bool OnMouseButtonDown ( sMouseEvents e);
 	bool OnMouseButtonUp ( sMouseEvents e );
-	bool OnMouseMove ( CVector pos );
+	bool OnMouseMove ( CPos pos );
 	bool OnMouseWheel ( int zDelta );
 
 	bool OnKeyDown ( WPARAM wParam );
 
 	void UpdateRects ( void );
-	bool ContainsPoint ( CVector pos );
+	bool ContainsPoint ( CPos pos );
 
 	void OnClickLeave ( void );
 	bool OnClickEvent ( void );
@@ -105,9 +105,9 @@ private:
 
 	};
 
-	void SetCursorForPoint ( CVector pos );
+	void SetCursorForPoint ( CPos pos );
 
-	E_WINDOW_AREA GetSizingBorderAtArea ( CVector pos );
+	E_WINDOW_AREA GetSizingBorderAtArea ( CPos pos );
 	SControlRect *GetWindowRect ( E_WINDOW_AREA eArea );
 
 	SControlRect m_rButton;
@@ -134,7 +134,7 @@ private:
 	int m_nDragX;
 	int m_nDragY;
 
-	CVector m_posDif;
+	CPos m_posDif;
 
 	std::vector<CWidget*> m_vControls;
 

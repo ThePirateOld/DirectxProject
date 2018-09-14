@@ -67,13 +67,13 @@ public:
 	bool					OnMouseButtonDown			( sMouseEvents e );
 	bool					OnMouseButtonUp				( sMouseEvents e );
 
-	bool					OnMouseMove					( CVector pos );
+	bool					OnMouseMove					( CPos pos );
 	bool					OnMouseWheel				 ( int zDelta );
 
 	bool					HandleKeyboard				( UINT uMsg, WPARAM wParam, LPARAM lParam );
 
 	void					UpdateRects					( void );
-	bool					ContainsPoint				( CVector pos );
+	bool					ContainsPoint				( CPos pos );
 
 private:
 

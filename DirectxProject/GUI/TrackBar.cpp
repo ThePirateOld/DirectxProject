@@ -127,7 +127,7 @@ bool CTrackBarVertical::OnMouseButtonUp ( sMouseEvents e )
 	return false;
 }
 
-bool CTrackBarVertical::OnMouseMove ( CVector pos )
+bool CTrackBarVertical::OnMouseMove ( CPos pos )
 {
 	if ( m_bPressed )
 	{
@@ -187,7 +187,7 @@ void CTrackBarVertical::UpdateRects ( void )
 }
 
 //--------------------------------------------------------------------------------------
-bool CTrackBarVertical::ContainsPoint ( CVector pos )
+bool CTrackBarVertical::ContainsPoint ( CPos pos )
 {
 	if ( !CanHaveFocus () )
 		return false;

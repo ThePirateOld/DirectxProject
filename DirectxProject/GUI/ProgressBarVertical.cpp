@@ -43,7 +43,7 @@ void CProgressBarVertical::Draw ( void )
 }
 
 //--------------------------------------------------------------------------------------
-bool CProgressBarVertical::OnMouseMove ( CVector pos )
+bool CProgressBarVertical::OnMouseMove ( CPos pos )
 {
 	if ( m_bPressed )
 	{
@@ -163,7 +163,7 @@ void CProgressBarVertical::UpdateRects ( void )
 }
 
 //--------------------------------------------------------------------------------------
-bool CProgressBarVertical::ContainsPoint ( CVector pos )
+bool CProgressBarVertical::ContainsPoint ( CPos pos )
 {
 	if ( !CanHaveFocus () )
 		return false;

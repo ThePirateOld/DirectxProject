@@ -98,6 +98,9 @@
     <ClCompile Include="GUI\renderers\Graphics.cpp">
       <Filter>GUI\renderers</Filter>
     </ClCompile>
+    <ClCompile Include="GUI\CGUI.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GUI">

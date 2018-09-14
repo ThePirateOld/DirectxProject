@@ -3,8 +3,8 @@
 
 class CDialog;
 
-typedef CVector Pos;
-typedef CVector Size;
+typedef CPos Pos;
+typedef CPos Size;
 
 enum eEVentControl
 {
@@ -24,13 +24,13 @@ typedef void ( __cdecl *tAction )( CWidget*, eEVentControl, int );
 
 struct SControlRect
 {
-	CVector m_pos;
+	CPos m_pos;
 	SIZE m_size;
 
 	SControlRect ( void )
 	{}
 
-	SControlRect (CVector pos )
+	SControlRect (CPos pos )
 	{
 		m_pos = pos;
 	}
@@ -151,7 +151,7 @@ struct sMouseEvents
 	};
 
 	INT				nDelta;
-	CVector			pos;
+	CPos			pos;
 
 	eMouseMessages	eMouseMessages;
 	eMouseButton	eButton;
@@ -254,8 +254,8 @@ public:
 	void SetPosX ( int nX );
 	void SetPosY ( int nY );
 
-	CVector *GetPos ( void );
-	CVector *GetUpdatedPos ( void );
+	CPos *GetPos ( void );
+	CPos *GetUpdatedPos ( void );
 
 	virtual void SetWidth ( int iWidth );
 	int GetWidth ( void );
@@ -293,7 +293,7 @@ public:
 
 	virtual bool MsgProc ( UINT uMsg, WPARAM wParam, LPARAM lParam );
 	virtual bool HandleKeyboard ( UINT uMsg, WPARAM wParam, LPARAM lParam );
-	virtual bool HandleMouse ( UINT uMsg, CVector pos, WPARAM wParam, LPARAM lParam );
+	virtual bool HandleMouse ( UINT uMsg, CPos pos, WPARAM wParam, LPARAM lParam );
 
 	SFontInfo GetFontInfo(void);
 	void SetFont(SFontInfo sInfo);
@@ -319,7 +319,7 @@ public:
 
 	virtual bool OnMouseButtonDown ( sMouseEvents e );
 	virtual bool OnMouseButtonUp ( sMouseEvents e );
-	virtual bool OnMouseMove ( CVector pos );
+	virtual bool OnMouseMove ( CPos pos );
 	virtual bool OnMouseWheel ( int zDelta );
 
 	virtual bool OnKeyDown ( WPARAM wParam );
@@ -333,7 +333,7 @@ public:
 
 
 public:
-	void LinkPos ( CVector pos );
+	void LinkPos ( CPos pos );
 
 public:
 	eRelative GetRelativeX ( void );
@@ -354,12 +354,12 @@ public:
 	EControlType GetType ( void );
 
 	virtual void UpdateRects ( void );
-	virtual bool ContainsPoint ( CVector pos );
+	virtual bool ContainsPoint ( CPos pos );
 protected:
 	bool bins;
 	SIZE m_oldParentSize;
 	CScissor sCissor;
-	CVector m_oldPos;
+	CPos m_oldPos;
 	SIZE m_size;
 	SIZE m_minSize;
 
@@ -392,8 +392,8 @@ protected:
 	eRelative m_eRelativeY;
 
 	CRITICAL_SECTION cs;
-	CVector m_pos;
-	CVector m_nonUpdatedPos;
+	CPos m_pos;
+	CPos m_nonUpdatedPos;
 	
 	bool m_bRelativePosX;
 	bool m_bRelativePosY;

@@ -766,7 +766,7 @@ bool CWindow::OnMouseButtonUp ( sMouseEvents e )
 	return false;
 }
 
-bool CWindow::OnMouseMove ( CVector pos )
+bool CWindow::OnMouseMove ( CPos pos )
 {
 	CWidget *pControl = GetTabPanelFocussedControl ();
 	bool bHasDropDown = HAS_CONTROL_TYPE ( pControl, CWidget::TYPE_DROPDOWN );
@@ -977,7 +977,7 @@ void CWindow::UpdateRects ( void )
 }
 
 //--------------------------------------------------------------------------------------
-bool CWindow::ContainsPoint ( CVector pos )
+bool CWindow::ContainsPoint ( CPos pos )
 {
 	if ( !CWidget::CanHaveFocus () ||
 		 !m_pScrollbar )
@@ -993,7 +993,7 @@ bool CWindow::ContainsPoint ( CVector pos )
 			 ( HAS_CONTROL_TYPE ( pControl, CWidget::EControlType::TYPE_DROPDOWN ) && pControl->ContainsPoint ( pos ) ) );
 }
 
-void CWindow::SetCursorForPoint ( CVector pos )
+void CWindow::SetCursorForPoint ( CPos pos )
 {
 	if ( m_rButton.ContainsPoint ( pos ) )
 	{
@@ -1032,7 +1032,7 @@ void CWindow::SetCursorForPoint ( CVector pos )
 	}
 }
 
-CWindow::E_WINDOW_AREA CWindow::GetSizingBorderAtArea ( CVector pos )
+CWindow::E_WINDOW_AREA CWindow::GetSizingBorderAtArea ( CPos pos )
 {
 	if ( ( m_pFocussedControl && m_pFocussedControl->OnClickEvent () ) ||
 		( m_bDragging || m_bPressed || m_bMaximized ) ||

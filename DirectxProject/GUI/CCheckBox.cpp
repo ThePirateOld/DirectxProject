@@ -156,7 +156,7 @@ void CCheckBox::UpdateRects(void)
 }
 
 //--------------------------------------------------------------------------------------
-bool CCheckBox::ContainsPoint ( CVector pos )
+bool CCheckBox::ContainsPoint ( CPos pos )
 {
 	if ( !CanHaveFocus () )
 		return false;

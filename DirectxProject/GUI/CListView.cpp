@@ -794,7 +794,7 @@ bool CListView::OnMouseButtonUp ( sMouseEvents e )
 	return false;
 }
 
-bool CListView::OnMouseMove ( CVector pos )
+bool CListView::OnMouseMove ( CPos pos )
 {
 	CScrollBarVertical *pScrollbarVer = m_pScrollbar->GetVerScrollbar ();
 	CScrollBarHorizontal *pScrollbarHor = m_pScrollbar->GetHorScrollbar ();
@@ -985,7 +985,7 @@ void CListView::UpdateRects ( void )
 	m_pScrollbar->UpdateScrollbars ( m_rListBoxArea );
 }
 
-bool CListView::ContainsPoint ( CVector pos )
+bool CListView::ContainsPoint ( CPos pos )
 {
 	if ( !CanHaveFocus () )
 		return false;

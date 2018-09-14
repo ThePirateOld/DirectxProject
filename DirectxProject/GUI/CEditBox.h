@@ -124,7 +124,7 @@ public:
 
 	bool OnMouseButtonDown ( sMouseEvents e );
 	bool OnMouseButtonUp ( sMouseEvents e );
-	bool OnMouseMove ( CVector pos );
+	bool OnMouseMove ( CPos pos );
 
 	bool OnKeyDown ( WPARAM wParam );           
 	bool OnKeyCharacter ( WPARAM wParam );

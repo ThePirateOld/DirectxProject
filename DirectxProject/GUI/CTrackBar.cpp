@@ -128,7 +128,7 @@ bool CTrackBarHorizontal::OnMouseButtonUp ( sMouseEvents e )
 	return false;
 }
 
-bool CTrackBarHorizontal::OnMouseMove ( CVector pos )
+bool CTrackBarHorizontal::OnMouseMove ( CPos pos )
 {
 	if ( m_bPressed )
 	{
@@ -187,7 +187,7 @@ void CTrackBarHorizontal::UpdateRects ( void )
 }
 
 //--------------------------------------------------------------------------------------
-bool CTrackBarHorizontal::ContainsPoint ( CVector pos )
+bool CTrackBarHorizontal::ContainsPoint ( CPos pos )
 {
 	if ( !CanHaveFocus () )
 		return false;

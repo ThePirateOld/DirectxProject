@@ -53,13 +53,13 @@ public:
 	bool OnMouseButtonDown ( sMouseEvents e );
 	bool OnMouseButtonUp ( sMouseEvents e );
 
-	bool OnMouseMove ( CVector pos );
+	bool OnMouseMove ( CPos pos );
 	bool OnMouseWheel ( int zDelta );
 
 	bool ControlMessages ( sControlEvents e );
 
 	void UpdateRects ( void );
-	bool ContainsPoint ( CVector pos );
+	bool ContainsPoint ( CPos pos );
 
 	void OnClickLeave ( void );
 	bool OnClickEvent ( void );

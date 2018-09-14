@@ -695,7 +695,7 @@ bool CTabPanel::OnMouseButtonUp ( sMouseEvents e )
 	return false;
 }
 
-bool CTabPanel::OnMouseMove ( CVector pos )
+bool CTabPanel::OnMouseMove ( CPos pos )
 {
 	if ( !CanHaveFocus () )
 		return false;
@@ -914,7 +914,7 @@ void CTabPanel::UpdateRects ( void )
 
 }
 
-bool CTabPanel::ContainsPoint ( CVector pos )
+bool CTabPanel::ContainsPoint ( CPos pos )
 {
 	int nWidth = 0;
 	size_t size = GetNumOfTabsVisible ();

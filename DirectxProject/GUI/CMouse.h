@@ -22,8 +22,8 @@ public:
 	bool HandleMessage ( UINT uMsg, WPARAM wParam, LPARAM lParam );
 
 	void SetPos ( int iX, int iY );
-	void SetPos ( CVector cPos );
-	CVector GetPos ( void );
+	void SetPos ( CPos cPos );
+	CPos GetPos ( void );
 
 	void Draw ( void );
 
@@ -42,7 +42,7 @@ public:
 
 	void SavePos ( void );
 	void LoadPos ( void );
-	CVector GetSavedPos ( void );
+	CPos GetSavedPos ( void );
 
 	void SetCursorType ( E_CURSOR_TYPE  eType ) { m_eCursorType = eType; }
 	E_CURSOR_TYPE GetCursorType ( void ) { return m_eCursorType; }
@@ -56,7 +56,7 @@ private:
 
 	E_CURSOR_TYPE m_eCursorType;
 
-	CVector m_Pos, m_SavedPos;
+	CPos m_Pos, m_SavedPos;
 	int m_iSize;
 
 	int m_iLeftButton, m_iRightButton, m_iMiddleButton, m_iWheel;

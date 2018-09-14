@@ -108,8 +108,8 @@ void CWidget::SetControl ( CDialog *pDialog, EControlType eType )
 	ZeroMemory ( &m_size, sizeof ( SIZE ) );
 	ZeroMemory ( &m_oldParentSize, sizeof ( SIZE ) );
 
-	ZeroMemory ( &m_pos, sizeof ( CVector ) );
-	ZeroMemory ( &m_nonUpdatedPos, sizeof ( CVector ) );
+	ZeroMemory ( &m_pos, sizeof ( CPos ) );
+	ZeroMemory ( &m_nonUpdatedPos, sizeof ( CPos ) );
 
 	ZeroMemory ( &m_rContentBox, sizeof ( SControlRect ) );
 }
@@ -414,7 +414,7 @@ bool CWidget::HandleKeyboard ( UINT uMsg, WPARAM wParam, LPARAM lParam )
 	return false;
 }
 
-bool CWidget::HandleMouse ( UINT uMsg, CVector pos, WPARAM wParam, LPARAM lParam )
+bool CWidget::HandleMouse ( UINT uMsg, CPos pos, WPARAM wParam, LPARAM lParam )
 {
 	return false;
 }
@@ -604,7 +604,7 @@ bool CWidget::OnMouseButtonUp ( sMouseEvents e )
 	return false;
 }
 
-bool CWidget::OnMouseMove ( CVector pos )
+bool CWidget::OnMouseMove ( CPos pos )
 {
 	return false;
 }

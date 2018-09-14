@@ -84,7 +84,7 @@ void CListBox::Draw ( void )
 
 				if ( m_bMultiSelection )
 				{
-					CVector pos = rRect.m_pos;
+					CPos pos = rRect.m_pos;
 					pos.m_nX -= 16;
 					pos.m_nY += 2;
 
@@ -337,7 +337,7 @@ bool CListBox::OnMouseButtonUp ( sMouseEvents e )
 	return false;
 }
 
-bool CListBox::OnMouseMove ( CVector pos )
+bool CListBox::OnMouseMove ( CPos pos )
 {
 	// Let the scroll bar handle it first.
 	if ( m_pEntryList->GetScrollbar ()->OnMouseMove ( pos ) )
@@ -381,7 +381,7 @@ void CListBox::UpdateRects ( void )
 	m_pEntryList->UpdateScrollbars ( m_rText );
 }
 
-bool CListBox::ContainsPoint ( CVector pos )
+bool CListBox::ContainsPoint ( CPos pos )
 {
 	if ( !CanHaveFocus () )
 		return false;

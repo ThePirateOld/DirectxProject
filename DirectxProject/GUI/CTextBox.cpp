@@ -166,7 +166,7 @@ bool CLogBox::OnMouseWheel ( int zDelta )
 	return true;
 }
 
-bool CLogBox::OnMouseMove ( CVector pos )
+bool CLogBox::OnMouseMove ( CPos pos )
 {
 	if ( m_pEntryList->GetScrollbar ()->OnMouseMove ( pos ) )
 		return true;
@@ -232,7 +232,7 @@ void CLogBox::UpdateRects ( void )
 	m_pEntryList->UpdateScrollbars ( m_rBoundingBox );
 }
 
-bool CLogBox::ContainsPoint ( CVector pos )
+bool CLogBox::ContainsPoint ( CPos pos )
 {
 	if ( !CanHaveFocus () )
 		return false;

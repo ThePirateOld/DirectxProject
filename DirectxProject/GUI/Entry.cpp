@@ -221,7 +221,7 @@ size_t CEntryList::GetSize ( void )
 	return m_vEntryList.size ();
 }
 
-int CEntryList::GetItemAtPos ( SControlRect rRect, CVector pos )
+int CEntryList::GetItemAtPos ( SControlRect rRect, CPos pos )
 {
 	CScrollBarVertical *pScrollbarVer = m_pScrollbar->GetVerScrollbar ();
 	int iIndex = -1;
@@ -370,7 +370,7 @@ void CEntryList::UpdateScrollbars ( SControlRect rRect )
 	m_pScrollbar->UpdateScrollbars ( rRect );
 }
 
-bool CEntryList::ContainsRects ( SControlRect rRect, CVector pos )
+bool CEntryList::ContainsRects ( SControlRect rRect, CPos pos )
 {
 	if ( !m_pScrollbar )
 		return false;

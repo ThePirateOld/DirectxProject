@@ -236,7 +236,7 @@ bool CMouse::HandleMessage ( UINT uMsg, WPARAM wParam, LPARAM lParam )
 	return false;
 }
 
-void CMouse::SetPos ( CVector cPos )
+void CMouse::SetPos ( CPos cPos )
 {
 	m_Pos = cPos;
 }
@@ -247,7 +247,7 @@ void CMouse::SetPos(int iX, int iY)
 	m_Pos.m_nY = iY;
 }
 
-CVector CMouse::GetPos ( void )
+CPos CMouse::GetPos ( void )
 {
 	return m_Pos;
 }
@@ -392,7 +392,7 @@ void CMouse::LoadPos ( void )
 	m_Pos = m_SavedPos;
 }
 
-CVector CMouse::GetSavedPos ( void)
+CPos CMouse::GetSavedPos ( void)
 {
 	return m_SavedPos;
 }

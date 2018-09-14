@@ -86,7 +86,7 @@ bool CScrollablePane::OnMouseButtonUp ( sMouseEvents e )
 	return false;
 }
 
-bool CScrollablePane::OnMouseMove ( CVector pos )
+bool CScrollablePane::OnMouseMove ( CPos pos )
 {
 	pos = pos;
 

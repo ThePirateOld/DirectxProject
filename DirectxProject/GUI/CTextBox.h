@@ -45,10 +45,10 @@ public:
 	bool OnMouseButtonUp ( sMouseEvents e );
 
 	bool OnMouseWheel ( int zDelta );
-	bool OnMouseMove ( CVector pos );
+	bool OnMouseMove ( CPos pos );
 
 	void UpdateRects ( void );
-	bool ContainsPoint ( CVector pos );
+	bool ContainsPoint ( CPos pos );
 
 	void GenerateLogFile ( bool bSet );
 

@@ -1,6 +1,4 @@
 #include "CGUI.h"
-#include <stdarg.h>
-#include <stdio.h>
 
 CDialog::CDialog ( IDirect3DDevice9 *pDevice )
 {
@@ -121,7 +119,7 @@ void CDialog::DrawFont ( SControlRect &rect, DWORD dwColor, const SIMPLEGUI_CHAR
 	if ( !pFont && !m_vFont.empty () )
 		pFont = m_vFont [ 0 ];
 
-	CVector pos = rect.m_pos;
+	CPos pos = rect.m_pos;
 	pFont->Print ( pos.m_nX, pos.m_nY, dwColor, szText, dwFlags );
 }
 
@@ -131,7 +129,7 @@ void CDialog::DrawBox ( SControlRect &rect, D3DCOLOR d3dColor, D3DCOLOR d3dColor
 	if ( !m_pRender )
 		return;
 
-	CVector pos = rect.m_pos;
+	CPos pos = rect.m_pos;
 	SIZE size = rect.m_size;
 
 	m_pRender->D3DBox ( pos.m_nX, pos.m_nY, size.cx, size.cy, 0.f, d3dColor, d3dColorOutline, bAntAlias );
@@ -143,7 +141,7 @@ void CDialog::DrawTriangle ( SControlRect &rect, float fAngle, D3DCOLOR d3dColor
 	if ( !m_pRender )
 		return;
 
-	CVector pos = rect.m_pos;
+	CPos pos = rect.m_pos;
 	SIZE size = rect.m_size;
 
 	int nMax = max ( size.cx, size.cy );
@@ -156,7 +154,7 @@ void CDialog::DrawCircle ( SControlRect &rect, D3DCOLOR d3dColor, D3DCOLOR d3dCo
 	if ( !m_pRender )
 		return;
 
-	CVector pos = rect.m_pos;
+	CPos pos = rect.m_pos;
 	SIZE size = rect.m_size;
 
 	int nMax = max ( size.cx, size.cy );
@@ -169,7 +167,7 @@ CProgressBarHorizontal *CDialog::AddProgressBarHorizontal ( CWindow *pWindow, in
 
 	if ( pProgressBar )
 	{
-		pProgressBar->SetPos ( CVector ( iX, iY ) );
+		pProgressBar->SetPos ( CPos ( iX, iY ) );
 		pProgressBar->SetSize ( iWidth, iHeight );
 		pProgressBar->SetMaxValue ( fMax );
 		pProgressBar->SetValue ( fValue );
@@ -188,7 +186,7 @@ CProgressBarVertical *CDialog::AddProgressBarVertical ( CWindow *pWindow, int iX
 
 	if ( pProgressBar )
 	{
-		pProgressBar->SetPos ( CVector ( iX, iY ) );
+		pProgressBar->SetPos ( CPos ( iX, iY ) );
 		pProgressBar->SetSize ( iWidth, iHeight );
 		pProgressBar->SetMaxValue ( fMax );
 		pProgressBar->SetValue ( fValue );
@@ -208,7 +206,7 @@ CWindow *CDialog::AddWindow ( int X, int Y, int Width, int Height, const SIMPLEG
 
 	if ( pWindow )
 	{
-		pWindow->SetPos ( CVector ( X, Y ) );
+		pWindow->SetPos ( CPos ( X, Y ) );
 		pWindow->SetSize ( Width, Height );
 		pWindow->SetText ( szString );
 		pWindow->SetAction ( Callback );
@@ -227,7 +225,7 @@ CButton *CDialog::AddButton ( CWindow *pWindow, int X, int Y, int Width, int Hei
 
 	if ( pButton )
 	{
-		pButton->SetPos ( CVector ( X, Y ) );
+		pButton->SetPos ( CPos ( X, Y ) );
 		pButton->SetSize ( Width, Height );
 		pButton->SetText ( szString );
 		pButton->SetAction ( Callback );
@@ -249,7 +247,7 @@ CCheckBox *CDialog::AddCheckBox ( CWindow *pWindow, int X, int Y, int Width, boo
 		if (pWindow)
 			pWindow->AddControl(pCheckBox);
 
-		pCheckBox->SetPos ( CVector ( X, Y ) );
+		pCheckBox->SetPos ( CPos ( X, Y ) );
 		pCheckBox->SetText ( szString );
 		pCheckBox->SetWidth(Width);
 		pCheckBox->SetAction ( Callback );
@@ -266,7 +264,7 @@ CListBox *CDialog::AddListBox ( CWindow *pWindow, int X, int Y, int Width, int H
 
 	if ( pListBox )
 	{
-		pListBox->SetPos ( CVector ( X, Y ) );
+		pListBox->SetPos ( CPos ( X, Y ) );
 		pListBox->SetSize ( Width, Height );
 		pListBox->SetAction ( Callback );
 
@@ -283,7 +281,7 @@ CListView *CDialog::AddListView ( CWindow *pWindow, int X, int Y, int Width, int
 
 	if ( pListView )
 	{
-		pListView->SetPos ( CVector ( X, Y ) );
+		pListView->SetPos ( CPos ( X, Y ) );
 		if ( pWindow )
 			pWindow->AddControl ( pListView );
 		pListView->SetSize ( Width, Height );
@@ -300,7 +298,7 @@ CLogBox *CDialog::AddTextBox ( CWindow *pWindow, int X, int Y, int Width, int He
 
 	if ( pTextBox )
 	{
-		pTextBox->SetPos ( CVector ( X, Y ) );
+		pTextBox->SetPos ( CPos ( X, Y ) );
 		pTextBox->SetSize ( Width, Height );
 		pTextBox->SetAction ( Callback );
 
@@ -318,7 +316,7 @@ CLabel *CDialog::AddLabel ( CWindow *pWindow, int X, int Y, int Width, int Heigh
 
 	if ( pLabel )
 	{
-		pLabel->SetPos ( CVector ( X, Y ) );
+		pLabel->SetPos ( CPos ( X, Y ) );
 		pLabel->SetText ( szString );
 
 		if (pWindow)
@@ -338,7 +336,7 @@ CEditBox *CDialog::AddEditBox ( CWindow *pWindow, int X, int Y, int Width, int H
 	if ( pEditBox )
 	{
 		
-		pEditBox->SetPos ( CVector ( X, Y ) );
+		pEditBox->SetPos ( CPos ( X, Y ) );
 		if ( pWindow )
 			pWindow->AddControl ( pEditBox );
 		pEditBox->SetSize ( Width, Height );
@@ -358,7 +356,7 @@ CDropDown *CDialog::AddDropDown ( CWindow *pWindow, int X, int Y, int Width, int
 
 	if ( pDropDown )
 	{
-		pDropDown->SetPos ( CVector ( X, Y ) );
+		pDropDown->SetPos ( CPos ( X, Y ) );
 		pDropDown->SetSize ( Width, Height );
 		pDropDown->SetText ( szString );
 		pDropDown->SetAction ( Callback );
@@ -380,7 +378,7 @@ CRadioButton *CDialog::AddRadioButton ( CWindow *pWindow, int iGroup, int X, int
 		if (pWindow)
 			pWindow->AddControl(pRadioButton);
 		pRadioButton->SetGroup ( iGroup );
-		pRadioButton->SetPos ( CVector ( X, Y ) );
+		pRadioButton->SetPos ( CPos ( X, Y ) );
 		pRadioButton->SetText(szString);
 		pRadioButton->SetWidth ( Width );
 		pRadioButton->SetAction ( Callback );
@@ -396,7 +394,7 @@ CTabPanel *CDialog::AddTabPanel ( CWindow *pWindow, int X, int Y, int Width, int
 	if ( pTabPanel )
 	{
 		
-		pTabPanel->SetPos ( CVector ( X, Y ) );
+		pTabPanel->SetPos ( CPos ( X, Y ) );
 		if ( pWindow )
 			pWindow->AddControl ( pTabPanel );
 		pTabPanel->SetSize ( Width, Height );
@@ -415,7 +413,7 @@ CPictureBox *CDialog::AddImage ( CWindow *pWindow, const TCHAR * szPath, int X, 
 
 	if ( pImage )
 	{
-		pImage->SetPos ( CVector ( X, Y ) );
+		pImage->SetPos ( CPos ( X, Y ) );
 
 		if ( pWindow )
 			pWindow->AddControl ( pImage );
@@ -436,7 +434,7 @@ CTrackBarHorizontal *CDialog::AddTrackBar ( CWindow * pWindow, int X, int Y, int
 
 	if ( pTrackBar )
 	{
-		pTrackBar->SetPos ( CVector ( X, Y ) );
+		pTrackBar->SetPos ( CPos ( X, Y ) );
 		pTrackBar->SetSize ( Width, Height );
 		pTrackBar->SetAction ( Callback );
 		pTrackBar->SetRange ( nMin, nMax );
@@ -455,7 +453,7 @@ CTrackBarVertical *CDialog::AddTrackBarVertical ( CWindow * pWindow, int X, int 
 
 	if ( pTrackBar )
 	{
-		pTrackBar->SetPos ( CVector ( X, Y ) );
+		pTrackBar->SetPos ( CPos ( X, Y ) );
 		pTrackBar->SetSize ( Width, Height );
 		pTrackBar->SetAction ( Callback );
 		pTrackBar->SetRange ( nMin, nMax );
@@ -475,7 +473,7 @@ CScrollBarVertical *CDialog::AddScrollBar ( CWindow *pWindow, int X, int Y, int 
 
 	if ( pScrollBar )
 	{
-		pScrollBar->SetPos ( CVector ( X, Y ) );
+		pScrollBar->SetPos ( CPos ( X, Y ) );
 		pScrollBar->SetSize ( Width, Height );
 		pScrollBar->SetAction ( Callback );
 		pScrollBar->SetTrackRange ( nMin, nMax );
@@ -496,7 +494,7 @@ CScrollBarHorizontal *CDialog::AddScrollBarHorizontal ( CWindow *pWindow, int X,
 
 	if ( pScrollBar )
 	{
-		pScrollBar->SetPos ( CVector ( X, Y ) );
+		pScrollBar->SetPos ( CPos ( X, Y ) );
 		pScrollBar->SetSize ( Width, Height );
 		pScrollBar->SetAction ( Callback );
 		pScrollBar->SetTrackRange ( nMin, nMax );
@@ -1066,7 +1064,7 @@ void CDialog::OnResetDevice ( void )
 				if ( !widget )
 					continue;
 
-				CVector pos = *widget->GetPos ();
+				CPos pos = *widget->GetPos ();
 				SIZE size = widget->GetSize ();
 
 				if ( pos.m_nX + size.cx >= vp.Width || 

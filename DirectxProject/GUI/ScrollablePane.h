@@ -12,7 +12,7 @@ public:
 
 	bool OnMouseButtonDown ( sMouseEvents e );
 	bool OnMouseButtonUp ( sMouseEvents e );
-	bool OnMouseMove ( CVector pos );
+	bool OnMouseMove ( CPos pos );
 
 	void OnClickLeave ( void );
 
@@ -46,7 +46,7 @@ public:
 	void RemoveControl ( void );
 	void SetFocussedControl ( void );
 
-	bool ContainsPoint ( CVector pos );
+	bool ContainsPoint ( CPos pos );
 
 	CScrollBarHorizontal *GetHorScrollbar ( void );
 	CScrollBarVertical *GetVerScrollbar ( void );
@@ -54,7 +54,7 @@ private:
 	bool m_bScrollHorShow;
 	bool m_bScrollVerShow;
 
-	CVector pos;
+	CPos pos;
 	SIZE m_pageSize;
 
 	SControlRect m_rRect;

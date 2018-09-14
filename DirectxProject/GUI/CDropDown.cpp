@@ -277,7 +277,7 @@ bool CDropDown::OnMouseButtonUp ( sMouseEvents e )
 	return false;
 }
 
-bool CDropDown::OnMouseMove ( CVector pos )
+bool CDropDown::OnMouseMove ( CPos pos )
 {
 	if ( !CanHaveFocus () )
 		return false;
@@ -404,7 +404,7 @@ void CDropDown::UpdateRects ( void )
 }
 
 //--------------------------------------------------------------------------------------
-bool CDropDown::ContainsPoint ( CVector pos )
+bool CDropDown::ContainsPoint ( CPos pos )
 {
 	if ( !CanHaveFocus () )
 		return false;

@@ -24,7 +24,7 @@ public:
 	void SetHeight(int nHeight);
 
 	void UpdateRects ( void );
-	bool ContainsPoint ( CVector pos );
+	bool ContainsPoint ( CPos pos );
 
 private:
 	bool m_bChecked;

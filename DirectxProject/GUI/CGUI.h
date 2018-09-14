@@ -25,9 +25,8 @@ class CEntryList;
 class CScrollablePane;
 class CTabPanel;
 class CScrollbar;
-#include "renderers\CGraphics.h"
-#define UNISCRIBE_DLLNAME _UI("usp10.dll")
 
+#define UNISCRIBE_DLLNAME _UI("usp10.dll")
 #define GETPROCADDRESS( Module, APIName, Temp ) \
     Temp = GetProcAddress( Module, #APIName ); \
     if( Temp ) \
@@ -44,6 +43,9 @@ class CScrollbar;
 
 #include <usp10.h>
 #include <dimm.h>
+#include <stdarg.h>
+#include <stdio.h>
+#include "renderers\CGraphics.h"
 
 #include "TextUtils.h"
 #include "LogFile.h"
@@ -51,7 +53,7 @@ class CScrollbar;
 #include "CVar.h"
 #include "CTimer.h"
 
-
+#include "CPos.h"
 #include "CElement.h"
 #include "Scrollbar.h"
 #include "CMouse.h"

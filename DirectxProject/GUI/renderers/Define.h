@@ -47,10 +47,6 @@ using namespace std;
 #include <d3dx9math.h>
 #include <d3d9types.h>
 
-
-#pragma comment(lib, "d3d9.lib")
-#pragma comment(lib, "d3dx9.lib")
-
 #define D3DX_PI						((FLOAT)  3.141592654f)
 
 #define SAFE_DELETE(p)				{ if(p) { delete (p);     (p)=NULL; } }

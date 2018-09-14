@@ -27,7 +27,7 @@ void CScrollBarHorizontal::Draw ( void )
 	if ( !m_bVisible )
 		return;
 
-	CVector mPos = m_pDialog->GetMouse ()->GetPos ();
+	CPos mPos = m_pDialog->GetMouse ()->GetPos ();
 
 	// Check if the arrow button has been held for a while.
 	// If so, update the thumb position to simulate repeated
@@ -229,7 +229,7 @@ bool CScrollBarHorizontal::OnMouseButtonUp ( sMouseEvents e )
 	return false;
 }
 
-bool CScrollBarHorizontal::OnMouseMove ( CVector pos )
+bool CScrollBarHorizontal::OnMouseMove ( CPos pos )
 {
 	if ( m_bDrag )
 	{
@@ -283,7 +283,7 @@ void CScrollBarHorizontal::UpdateRects ( void )
 }
 
 //--------------------------------------------------------------------------------------
-bool CScrollBarHorizontal::ContainsPoint ( CVector pos )
+bool CScrollBarHorizontal::ContainsPoint ( CPos pos )
 {
 	if ( !CanHaveFocus () )
 		return false;

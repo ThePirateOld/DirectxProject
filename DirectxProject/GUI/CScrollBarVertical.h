@@ -10,11 +10,11 @@ public:
 	void Draw ( void );
 
 	void UpdateRects ( void );
-	bool ContainsPoint ( CVector pos );
+	bool ContainsPoint ( CPos pos );
 
 	bool OnMouseButtonDown ( sMouseEvents e );
 	bool OnMouseButtonUp ( sMouseEvents e );
-	bool OnMouseMove ( CVector pos );
+	bool OnMouseMove ( CPos pos );
 
 	void OnClickLeave ( void )
 	{
@@ -55,6 +55,6 @@ private:
 	int nThumbOffset;
 
 	CTimer m_timer;
-	CVector m_LastMouse;
+	CPos m_LastMouse;
 	ARROWSTATE m_Arrow; // State of the arrows
 };
